@@ -8,9 +8,7 @@ async function getData(id: number) {
   return res.json();
 }
 
-
 export default async function Page({ params }: { params: { id: number } }) {
-
   const data = await getData(params.id);
   const steps = data.steps;
 
@@ -22,39 +20,39 @@ export default async function Page({ params }: { params: { id: number } }) {
         <div className="p-8">
           <div className="flex items-center justify-center">
             <div className="flex flex-col items-center">
-              <Node bgColor="bg-green-300" name="Inicio" shape="rounded-full" />
+              <Node addStyles="bg-green-300 rounded-full" name="Inicio" />
               <div className="h-16 w-2 bg-gray-300"></div>
-              {steps.map(s => {
-
-                return (<>
-                  <Node name={s.name} shape="rounded-3xl" />
-                  {/* //ultimo não deve renderizar a ligação */}
-                  <div className="h-16 w-2 bg-gray-300"></div>
-                </>)
-              }
-              )}
-              <Node bgColor="bg-red-300" name='Fim' shape="rounded-full" />
+              {steps.map((s) => {
+                return (
+                  <>
+                    <Node name={s.name} addStyles="rounded-3xl" />
+                    {/* //ultimo não deve renderizar a ligação */}
+                    <div className="h-16 w-2 bg-gray-300"></div>
+                  </>
+                );
+              })}
+              <Node addStyles="bg-red-300 rounded-full" name="Fim" />
             </div>
           </div>
         </div>
-
       </div>
     </>
-  )
+  );
 }
 
-
-const Node = ({ name, bgColor, shape }: NodeProps) => {
-  return <>
-
-    <div className={`h-36 w-52 ${bgColor}   ${shape} shadow-lg flex items-center justify-center`}>
-      <span className="text-gray-700 text-xl font-semibold p-6">{name}</span>
-    </div>
-  </>
-}
+const Node = ({ name, addStyles }: NodeProps) => {
+  return (
+    <>
+      <div
+        className={` ${addStyles} h-36 w-52  shadow-lg flex items-center justify-center`}
+      >
+        <span className="text-gray-700 text-xl font-semibold p-6">{name}</span>
+      </div>
+    </>
+  );
+};
 
 interface NodeProps {
   name: string;
-  bgColor?: "bg-green-300";
-  shape?: string;
+  addStyles?: string;
 }

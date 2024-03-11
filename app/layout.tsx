@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import NavBar from "@/components/NavBar";
+import NewModal from "@/components/NewModal";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Stage Teste Técnico",
-  description: "Validação Técnica para vaga de desenvolvedor fullstack na stage",
+  description:
+    "Validação Técnica para vaga de desenvolvedor fullstack na stage",
 };
 
 export default function RootLayout({
@@ -16,7 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <NavBar />
+        <main className="flex min-h-screen flex-col items-center justify-around p-24">
+          {children}
+          <NewModal />
+        </main>
+      </body>
     </html>
   );
 }
