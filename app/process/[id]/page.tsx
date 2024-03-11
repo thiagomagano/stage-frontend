@@ -1,3 +1,5 @@
+import { StepProcess } from "@/types/types";
+
 async function getData(id: number) {
   const res = await fetch("http://localhost:3000/process/" + id);
 

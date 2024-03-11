@@ -23,6 +23,8 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 
+import axios from "axios";
+
 const formSchema = z.object({
   name: z.string().min(2).max(50),
   description: z.string(),
@@ -40,9 +42,17 @@ export default function FormProcess() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
     console.log(values);
+    const API_URL = "http://localhost:3000/process/new";
+    try {
+      axios({
+        method: "post",
+        url: API_URL,
+        data: values,
+      });
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   return (

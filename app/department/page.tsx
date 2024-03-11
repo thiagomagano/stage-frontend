@@ -36,7 +36,7 @@ export default async function Page() {
               <div> {department.id}</div>
               <div> {department.title}</div>
               <div>
-                <Link href={`/process/${department.id}`}>
+                <Link href={`/process/`}>
                   <Button className="bg-green-600">Ver processos</Button>
                 </Link>
               </div>

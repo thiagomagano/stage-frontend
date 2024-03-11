@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 async function getData() {
@@ -19,13 +20,14 @@ export default async function Home() {
   console.log(processes);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-around p-24">
+    <main className="flex  flex-col items-center justify-center p-24 gap-16">
       <h1 className="text-5xl">Teste Técnico da Stage</h1>
       <div className="p-4 flex gap-4">
-        <Link href="?modal=true">
-          <button type="button" className="bg-blue-500 text-white p-2">
-            Cadastrar Área
-          </button>
+        <Link href="/process">
+          <Button>Ver Areas</Button>
+        </Link>
+        <Link href="/process">
+          <Button>Ver Processos</Button>
         </Link>
       </div>
     </main>
