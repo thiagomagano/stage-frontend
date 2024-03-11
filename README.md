@@ -2,7 +2,7 @@
 
 - [Back-End](https://github.com/thiagomagano/stage-back)
 - [Front-End](https://github.com/thiagomagano/stage-front)
-- [Apresentação](apresentação.md)
+- [Apresentação](apresentacao.md)
 
 ## Front-end
 
