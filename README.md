@@ -27,3 +27,10 @@ API_URL= "http://localhost:3000"
     npm run dev 
 ```
 
+## TODO
+
+- [] CRUD de todas as entidades Entidades
+- [] Listar Processos com Area especifica
+- [] Arrumar Layout.
+- [] Considerar React Flow para montar os mapas
+- [] Melhor UX como um todo.
