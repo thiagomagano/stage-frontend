@@ -24,7 +24,7 @@ export default async function Page({ params }: { params: { id: number } }) {
             <div className="flex flex-col items-center">
               <Node addStyles="bg-green-300 rounded-full" name="Inicio" />
               <div className="h-16 w-2 bg-gray-300"></div>
-              {steps.map((s) => {
+              {steps.map((s: any) => {
                 return (
                   <>
                     <Node name={s.name} addStyles="rounded-3xl" />
